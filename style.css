@@ -167,3 +167,48 @@ footer {
     padding-left: 20px;
     list-style-type: square;
 }
+/* ... (既存のCSSはそのまま) ... */
+
+/* ゲームイメージセクションのスタイル */
+.game-images {
+    margin: 30px 0;
+    padding: 10px 0;
+    border-top: 2px dashed #ff4500; /* 区切り線 */
+    border-bottom: 2px dashed #ff4500; /* 区切り線 */
+}
+
+.game-images h3 {
+    color: #ff007f; /* 目立つ色 */
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.image-gallery {
+    display: flex; /* 画像を横並びにする */
+    flex-wrap: wrap; /* 画面が狭い場合は折り返す */
+    justify-content: center; /* 中央に配置 */
+    gap: 15px; /* 画像間のスペース */
+    margin-top: 15px;
+}
+
+.image-gallery img {
+    width: 100%; /* スマホでは幅いっぱい */
+    max-width: 280px; /* PCでは最大幅を制限 */
+    height: auto; /* 高さは自動調整 */
+    border: 5px solid #333; /* 額縁のような枠 */
+    border-radius: 10px; /* 角を丸くする */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); /* 影で立体感を出す */
+    transition: transform 0.2s ease-in-out; /* ホバーで少し拡大するアニメーション */
+}
+
+/* 画像にマウスを乗せた時の効果 */
+.image-gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* スマホでの表示を考慮した微調整 */
+@media (max-width: 600px) {
+    .image-gallery img {
+        max-width: 90%; /* スマホで少し小さめに表示 */
+    }
+}
