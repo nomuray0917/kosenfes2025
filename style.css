@@ -1,0 +1,136 @@
+/* リセットと基本設定 */
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif; /* 目立つフォントを使用 */
+    background-color: #ffe066; /* 背景色：目立つ黄色（目玉焼きの黄身のような色） */
+    color: #333; /* 基本の文字色 */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 1.6;
+    display: flex; /* 中央寄せ用 */
+    justify-content: center; /* 中央寄せ用 */
+    min-height: 100vh; /* 画面いっぱいの高さ */
+}
+
+.container {
+    width: 90%; /* スマホ画面に合わせて幅を調整 */
+    max-width: 600px; /* PCで見ても大きくなりすぎないように制限 */
+    background-color: #ffffff; /* コンテンツエリアの背景は白 */
+    border: 10px solid #ff4500; /* 派手なオレンジの縁取り */
+    border-radius: 20px;
+    padding: 20px 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 影で立体的に */
+    margin: 20px 0; /* 上下の余白 */
+}
+
+/* ヘッダー */
+header {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px dashed #ff4500; /* 点線でポップに */
+}
+
+.class-name {
+    font-size: 3em; /* クラス名は大きく */
+    font-weight: 900;
+    color: #ff4500; /* 派手な色 */
+    text-shadow: 3px 3px 0 #333; /* 影を付けて目立たせる */
+    margin: 0;
+    line-height: 1.2;
+}
+
+.catchphrase {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* イベント情報 */
+.event-info h2 {
+    font-size: 2em;
+    color: #007bff; /* 青で強調 */
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+.description {
+    font-size: 1.1em;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+/* CTAボタン (最も重要) */
+.cta-section {
+    margin: 30px 0;
+}
+
+.cta-button {
+    display: block; /* ブロック要素にして幅いっぱいにする */
+    background-color: #ff007f; /* 超派手なピンク */
+    color: #ffffff;
+    font-size: 1.5em;
+    font-weight: 900;
+    padding: 15px 20px;
+    text-decoration: none; /* 下線を消す */
+    border-radius: 50px; /* 丸っこいボタン */
+    border: 5px solid #333; /* 黒い縁取り */
+    box-shadow: 0 7px 0 #333; /* 押し込みボタン風の影 */
+    transition: all 0.1s;
+    /* アニメーション：クリックで沈む */
+    position: relative;
+    top: 0;
+}
+
+.cta-button:active {
+    top: 5px;
+    box-shadow: 0 2px 0 #333;
+}
+
+/* 場所・時間・意気込み */
+.location-time, .appeal {
+    background-color: #fffacd; /* 薄い黄色で背景に変化をつける */
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #ff4500;
+}
+
+.location-time h3, .appeal h3 {
+    color: #333;
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+.appeal ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.appeal li {
+    background-color: #ffaaaa; /* リスト項目を赤系の色で目立たせる */
+    color: #333;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+/* フッター */
+footer {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #888;
+}
+
+/* スマホでの表示を考慮した微調整 */
+@media (max-width: 400px) {
+    .class-name {
+        font-size: 2.5em;
+    }
+    .cta-button {
+        font-size: 1.3em;
+    }
+}
