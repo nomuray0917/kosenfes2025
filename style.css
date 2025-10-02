@@ -272,3 +272,20 @@ footer {
     width: 60%; 
 }
 /* ... その他の .passcode-section スタイル ... */
+/* 報酬リンクのスタイル */
+.reward-link {
+    font-weight: bold; /* 太字 */
+    font-size: 1.1em; /* 少し大きく */
+    color: #FF0000; /* YouTubeのブランドカラーである赤 */
+    text-decoration: underline wavy; /* 波線の下線で目立たせる */
+    padding: 5px;
+    border: 1px dashed #FF0000; /* 赤い点線で囲む */
+    border-radius: 5px;
+    display: inline-block; /* パディングとボーダーを適用できるようにする */
+}
+
+.reward-link:hover {
+    color: #FFFFFF; /* マウスオーバーで文字を白に */
+    background-color: #FF0000; /* 背景を赤に */
+    text-decoration: none; /* 下線を消す */
+}
