@@ -134,3 +134,36 @@ footer {
         font-size: 1.3em;
     }
 }
+
+/* details.html 用の追加スタイル */
+.manual, .info {
+    text-align: left; /* テキストを左寄せにして読みやすく */
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f7f7f7; /* 薄いグレーの背景 */
+    border-radius: 10px;
+    border: 1px dashed #cccccc;
+}
+
+.manual h2, .info h2 {
+    text-align: center;
+    color: #ff4500;
+    margin-bottom: 15px;
+}
+
+.step {
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff; /* ステップを青い線で区切る */
+    padding-left: 10px;
+}
+
+.step h3 {
+    color: #333;
+    font-size: 1.3em;
+    margin-top: 0;
+}
+
+.step ul {
+    padding-left: 20px;
+    list-style-type: square;
+}
