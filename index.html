@@ -69,22 +69,32 @@
 
         <script>
             function checkPasscode() {
-                // 1. 合言葉を定義（ここで合言葉を変更できます）
-                const correctCode = "MINECRAFT2025"; 
-                // 2. ユーザーが入力した値を取得し、大文字に変換
-                const inputElement = document.getElementById('passcodeInput');
-                const userInput = inputElement.value.toUpperCase(); 
-                // 3. メッセージ表示エリアを取得
-                const messageElement = document.getElementById('message');
+          // ★★★ 難易度ごとの合言葉とURLの定義 ★★★
+        const passcodes = {
 
-                if (userInput === correctCode) {
-                    // 正しい場合
-                    messageElement.textContent = '正解！特別なページへ移動します...';
-                    messageElement.style.color = '#4CAF50'; // 緑色
-                    // 1秒後にシークレットページへ移動
-                    setTimeout(() => {
-                        window.location.href = 'secret.html';
-                    }, 1000); 
+            // 合言葉を大文字で定義しておくと、入力側も大文字に統一できて便利です
+            "YJSNPI": "secret_easy.html",      // 例: 簡単な合言葉
+            "YAJUANDU": "secret_normal.html",  // 例: 標準の合言葉
+            "YARIMASUNE": "secret_hard.html"     // 例: 難しい合言葉
+        }; 
+        // ★★★ 難易度ごとの合言葉とURLの定義はここまで ★★★
+
+        const inputElement = document.getElementById('passcodeInput');
+        // ユーザー入力を取得し、すべて大文字に変換して比較する
+        const userInput = inputElement.value.toUpperCase(); 
+        const messageElement = document.getElementById('message');
+
+        // 定義された合言葉の中にユーザーの入力があるかチェック
+        if (passcodes[userInput]) {
+            // 合言葉が正しい場合
+            const targetUrl = passcodes[userInput];
+            messageElement.textContent = '正解！難易度に応じた特別なページへ移動します...';
+            messageElement.style.color = '#4CAF50'; // 緑色
+            
+            // 1秒後に対応するシークレットページへ移動
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, 1000); 
 
                 } else {
                     // 間違っている場合
