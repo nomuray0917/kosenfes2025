@@ -236,3 +236,39 @@ footer {
     top: 3px;
     box-shadow: 0 2px 0 #388E3C;
 }
+/* 合言葉セクションのボタンのスタイルを修正 */
+.passcode-section button {
+    /* 以前の派手なスタイルをすべてリセット/変更 */
+    background-color: #6c757d; /* 落ち着いたグレー色 */
+    color: white;
+    font-weight: 500;
+    font-size: 0.8em; /* 文字を小さく */
+    padding: 5px 10px; /* パディングを減らして全体を小さく */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: none; /* 影をなくす */
+    transition: background-color 0.1s;
+    height: fit-content; /* 高さの自動調整 */
+    align-self: center; /* 入力欄の中央に配置 */
+}
+
+.passcode-section button:hover {
+    background-color: #5a6268; /* ホバーで少し濃くなる程度 */
+}
+
+.passcode-section button:active {
+    /* 押し込み時の効果を控えめに */
+    box-shadow: none;
+    transform: translateY(1px);
+}
+
+/* その他の要素のスタイルは前回同様 */
+#passcodeInput {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 60%; 
+}
+/* ... その他の .passcode-section スタイル ... */

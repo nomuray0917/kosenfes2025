@@ -55,6 +55,45 @@
                     感想・アンケートはこちら！📝
                 </a>
             </section>
+            <section class="passcode-section">
+                <h3>🏆 挑戦者へのご褒美 🔑</h3>
+                <p>ゲームを最後までクリアした人は、合言葉を入力して特別なページへ！</p>
+                <div class="input-area">
+                    <input type="text" id="passcodeInput" placeholder="ここに合言葉を入力">
+                    <button onclick="checkPasscode()">コードを送信！</button>
+                </div>
+                <p id="message" class="error-message"></p>
+            </section>
+            
+        </main>
+
+        <script>
+            function checkPasscode() {
+                // 1. 合言葉を定義（ここで合言葉を変更できます）
+                const correctCode = "MINECRAFT2025"; 
+                // 2. ユーザーが入力した値を取得し、大文字に変換
+                const inputElement = document.getElementById('passcodeInput');
+                const userInput = inputElement.value.toUpperCase(); 
+                // 3. メッセージ表示エリアを取得
+                const messageElement = document.getElementById('message');
+
+                if (userInput === correctCode) {
+                    // 正しい場合
+                    messageElement.textContent = '正解！特別なページへ移動します...';
+                    messageElement.style.color = '#4CAF50'; // 緑色
+                    // 1秒後にシークレットページへ移動
+                    setTimeout(() => {
+                        window.location.href = 'secret.html';
+                    }, 1000); 
+
+                } else {
+                    // 間違っている場合
+                    messageElement.textContent = '合言葉が違います。もう一度確認してね！';
+                    messageElement.style.color = '#ff4500'; // 赤色
+                    inputElement.value = ''; // 入力欄をクリア
+                }
+            }
+        </script>
         </main>
 
         <footer>
