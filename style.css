@@ -236,56 +236,101 @@ footer {
     top: 3px;
     box-shadow: 0 2px 0 #388E3C;
 }
-/* 合言葉セクションのボタンのスタイルを修正 */
-.passcode-section button {
-    /* 以前の派手なスタイルをすべてリセット/変更 */
-    background-color: #6c757d; /* 落ち着いたグレー色 */
-    color: white;
-    font-weight: 500;
-    font-size: 0.8em; /* 文字を小さく */
-    padding: 5px 10px; /* パディングを減らして全体を小さく */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    box-shadow: none; /* 影をなくす */
-    transition: background-color 0.1s;
-    height: fit-content; /* 高さの自動調整 */
-    align-self: center; /* 入力欄の中央に配置 */
+
+/* style.css に追加するスタイル */
+/* ---------------------------------------------------- */
+/* ★★★ 追加要素のスタイル ★★★ */
+
+.access-guide {
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #007bff;
 }
 
-.passcode-section button:hover {
-    background-color: #5a6268; /* ホバーで少し濃くなる程度 */
+/* SNSハッシュタグセクション */
+.hashtag-section {
+    margin: 30px 0;
+    padding: 15px;
+    border-top: 2px dashed #007bff;
+    border-bottom: 2px dashed #007bff;
 }
 
-.passcode-section button:active {
-    /* 押し込み時の効果を控えめに */
-    box-shadow: none;
-    transform: translateY(1px);
+.hashtag-section h3 {
+    color: #007bff;
 }
 
-/* その他の要素のスタイルは前回同様 */
-#passcodeInput {
+.hashtag-text {
+    font-size: 1.3em;
+    font-weight: 900;
+    color: #1DA1F2; /* Twitter/Xの青 */
     padding: 10px;
-    border: 2px solid #ccc;
+    border: 2px solid #1DA1F2;
     border-radius: 8px;
-    font-size: 1em;
-    width: 60%; 
-}
-/* ... その他の .passcode-section スタイル ... */
-/* 報酬リンクのスタイル */
-.reward-link {
-    font-weight: bold; /* 太字 */
-    font-size: 1.1em; /* 少し大きく */
-    color: #FF0000; /* YouTubeのブランドカラーである赤 */
-    text-decoration: underline wavy; /* 波線の下線で目立たせる */
-    padding: 5px;
-    border: 1px dashed #FF0000; /* 赤い点線で囲む */
-    border-radius: 5px;
-    display: inline-block; /* パディングとボーダーを適用できるようにする */
+    background-color: #e8f5fd;
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-.reward-link:hover {
-    color: #FFFFFF; /* マウスオーバーで文字を白に */
-    background-color: #FF0000; /* 背景を赤に */
-    text-decoration: none; /* 下線を消す */
+.social-share {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap; 
+}
+
+.share-button {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: opacity 0.2s;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.share-button:hover {
+    opacity: 0.8;
+}
+
+.twitter-button {
+    background-color: #1DA1F2; /* X/Twitterカラー */
+    border: 2px solid #148fdd;
+}
+
+.insta-button {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+    border: 2px solid #941764;
+}
+
+/* Q&Aセクション */
+.faq {
+    text-align: left;
+    padding: 15px;
+    background-color: #f0fff0; /* 薄い緑で視認性を上げる */
+    border-radius: 10px;
+    margin-top: 25px;
+    border: 1px dashed #388E3C;
+}
+.faq h3 {
+    text-align: center;
+    color: #388E3C;
+    margin-top: 0;
+}
+.faq dl {
+    margin: 0;
+}
+.faq dt {
+    font-weight: bold;
+    color: #388E3C; /* 質問の色 */
+    margin-top: 10px;
+}
+.faq dd {
+    margin-left: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted #ccc; /* 質問ごとに区切り線 */
 }

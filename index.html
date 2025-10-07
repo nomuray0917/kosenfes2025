@@ -24,14 +24,25 @@
             </section>
 
             <section class="cta-section">
-                <a href="details.html" class="cta-button">詳細はこちら！👉</a>
+                <a href="details.html" class="cta-button">操作説明・詳細はこちら！👉</a>
             </section>
             
+            <section class="wait-time">
+                <h3>⌛ 現在の待ち時間</h3>
+                <p class="time-status">
+                    現在の待ち時間は<strong>約5分</strong>です！
+                    <span class="update-time">(最終更新：10時15分)</span>
+                    </p>
+            </section>
+
             <section class="location-time" id="details">
                 <h3>📍 場所・時間 🕒</h3>
                 <p>
                     <strong>場所:</strong> 教養棟 2F 2-I教室<br>
                     <strong>時間:</strong> 10:00 〜 16:00 
+                </p>
+                <p class="access-guide">
+                    正門から入って，左側にある階段を登り，左手にある建物を左側に進んだ一番奥にあります！
                 </p>
             </section>
 
@@ -43,67 +54,38 @@
                     <li>様々な追加アイテムを駆使して単位をゲットしよう！</li>
                 </ul>
             </section>
+            
             <section class="game-images">
                 <h3>📸 ゲームイメージ</h3>
                 <div class="image-gallery">
                     <img src="images/minecraft1.png" alt="ゲーム例1">
                     <img src="images/minecraft2.png" alt="ゲーム例2">
-                    </div>
+                </div>
             </section>
+            
+            <section class="hashtag-section">
+                <h3>📢 シェアしてね！</h3>
+                <p class="hashtag-text">
+                    展示の感想は <strong>#2Iマイクラ</strong> で投稿してね！
+                </p>
+                
+                <div class="social-share">
+                    <a href="https://twitter.com/intent/tweet?url=https://nomuray0917.github.io/kosenfes2025/index.html&text=【高専RPG in Minecraft】が熱い🔥&hashtags=2Iマイクラ,高専祭" target="_blank" class="share-button twitter-button">
+                        <span style="font-size: 1.5em;">&#x1D54F;</span> X (Twitter) でシェア
+                    </a>
+                    
+                    <a href="https://www.instagram.com/explore/tags/2Iマイクラ/" target="_blank" class="share-button insta-button">
+                        📸 Instagramで投稿を見る
+                    </a>
+                </div>
+            </section>
+
             <section class="forms-link-section">
                 <a href="https://forms.cloud.microsoft/r/kmWkdezFsf" target="_blank" class="forms-button">
                     感想・アンケートはこちら！📝
                 </a>
             </section>
-            <section class="passcode-section">
-                <h3>🏆 挑戦者へのご褒美 🔑</h3>
-                <p>ゲームを最後までクリアした人は、合言葉を入力して特別なページへ！</p>
-                <div class="input-area">
-                    <input type="text" id="passcodeInput" placeholder="ここに合言葉を入力">
-                    <button onclick="checkPasscode()">コードを送信！</button>
-                </div>
-                <p id="message" class="error-message"></p>
-            </section>
-            
-        </main>
 
-        <script>
-            function checkPasscode() {
-          // ★★★ 難易度ごとの合言葉とURLの定義 ★★★
-        const passcodes = {
-
-            // 合言葉を大文字で定義しておくと、入力側も大文字に統一できて便利です
-            "YJSNPI": "secret_easy.html",      // 例: 簡単な合言葉
-            "YAJUANDU": "secret_normal.html",  // 例: 標準の合言葉
-            "YARIMASUNE": "secret_hard.html"     // 例: 難しい合言葉
-        }; 
-        // ★★★ 難易度ごとの合言葉とURLの定義はここまで ★★★
-
-        const inputElement = document.getElementById('passcodeInput');
-        // ユーザー入力を取得し、すべて大文字に変換して比較する
-        const userInput = inputElement.value.toUpperCase(); 
-        const messageElement = document.getElementById('message');
-
-        // 定義された合言葉の中にユーザーの入力があるかチェック
-        if (passcodes[userInput]) {
-            // 合言葉が正しい場合
-            const targetUrl = passcodes[userInput];
-            messageElement.textContent = '正解！難易度に応じた特別なページへ移動します...';
-            messageElement.style.color = '#4CAF50'; // 緑色
-            
-            // 1秒後に対応するシークレットページへ移動
-            setTimeout(() => {
-                window.location.href = targetUrl;
-            }, 1000); 
-
-                } else {
-                    // 間違っている場合
-                    messageElement.textContent = '合言葉が違います。もう一度確認してね！';
-                    messageElement.style.color = '#ff4500'; // 赤色
-                    inputElement.value = ''; // 入力欄をクリア
-                }
-            }
-        </script>
         </main>
 
         <footer>
