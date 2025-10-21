@@ -54,36 +54,37 @@
         </main>
     </div>
     <script>
-        function checkAuthPasscode() {
-            // ★★★ ここで合言葉を設定 ★★★
-            const correctCode = "creephyp"; 
+    function checkAuthPasscode() {
+        // ★★★ 合言葉の設定（大文字・小文字を区別します） ★★★
+        const correctCode = "creephyp"; 
+        
+        const inputElement = document.getElementById('passcodeInput');
+        // .toUpperCase() を削除し、入力されたままの文字と比較します
+        const userInput = inputElement.value; 
+        const messageElement = document.getElementById('message');
+
+        if (userInput === correctCode) {
+            // 正しい場合
+            messageElement.textContent = '認証成功！シークレットページへ移動します...';
+            messageElement.style.color = '#4CAF50';
             
-            const inputElement = document.getElementById('passcodeInput');
-            const userInput = inputElement.value.toUpperCase(); 
-            const messageElement = document.getElementById('message');
+            // 1秒後にシークレットページへ移動。URLに認証成功のクエリパラメータを付与！
+            setTimeout(() => {
+                // secret.html?auth=success が「正しく認証した証」となる
+                window.location.href = 'secret.html?auth=success'; 
+            }, 1000); 
 
-            if (userInput === correctCode) {
-                // 正しい場合
-                messageElement.textContent = '認証成功！シークレットページへ移動します...';
-                messageElement.style.color = '#4CAF50';
-                
-                // 1秒後にシークレットページへ移動。URLに認証成功のクエリパラメータを付与！
-                setTimeout(() => {
-                    // この ?auth=success が「正しく認証した証」となる
-                    window.location.href = 'secret.html?auth=success'; 
-                }, 1000); 
-
-            } else {
-                // 間違っている場合
-                messageElement.textContent = '合言葉が違います。トップページに戻ります。';
-                messageElement.style.color = '#ff4500';
-                
-                // 3秒後に index.html へ強制的に戻す
-                setTimeout(() => {
-                    window.location.href = 'index.html'; 
-                }, 3000);
-            }
+        } else {
+            // 間違っている場合
+            messageElement.textContent = '合言葉が違います。トップページに戻ります。';
+            messageElement.style.color = '#ff4500';
+            
+            // 3秒後に index.html へ強制的に戻す
+            setTimeout(() => {
+                window.location.href = 'index.html'; 
+            }, 3000);
         }
-    </script>
+    }
+</script>
     </body>
 </html>
