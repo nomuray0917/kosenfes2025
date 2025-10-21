@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 合言葉認証ページ 🔒</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 500px; margin-top: 100px;">
+        <header>
+            <h1>🔐 シークレットエリア認証</h1>
+            <p>特別な情報を見るには、合言葉を入力してください。</p>
+        </header>
+
+        <main>
+            <section class="passcode-auth">
+                <div class="input-area">
+                    <input type="password" id="passcodeInput" placeholder="合言葉を入力" autocomplete="off">
+                    <button onclick="checkAuthPasscode()">認証</button>
+                </div>
+                <p id="message" class="error-message"></p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        function checkAuthPasscode() {
+            // ★★★ ここで合言葉を設定 ★★★
+            const correctCode = "MINECRAFT2025"; 
+            
+            const inputElement = document.getElementById('passcodeInput');
+            const userInput = inputElement.value.toUpperCase(); 
+            const messageElement = document.getElementById('message');
+
+            if (userInput === correctCode) {
+                // 正しい場合
+                messageElement.textContent = '認証成功！シークレットページへ移動します...';
+                messageElement.style.color = '#4CAF50';
+                
+                // 1秒後にシークレットページへ移動。URLに認証成功のクエリパラメータを付与！
+                setTimeout(() => {
+                    // この ?auth=success が「正しく認証した証」となる
+                    window.location.href = 'secret.html?auth=success'; 
+                }, 1000); 
+
+            } else {
+                // 間違っている場合
+                messageElement.textContent = '合言葉が違います。トップページに戻ります。';
+                messageElement.style.color = '#ff4500';
+                
+                // 3秒後に index.html へ強制的に戻す
+                setTimeout(() => {
+                    window.location.href = 'index.html'; 
+                }, 3000);
+            }
+        }
+    </script>
+</body>
+</html>
